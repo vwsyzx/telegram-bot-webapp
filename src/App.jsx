@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useState } from 'react'
 import './App.css'
 import Cart from './Components/Cart';
@@ -13,6 +13,13 @@ function App() {
 
   const [input1, setInput1] = useState('')
   const [mood, setMood] = useState(false)
+  const inputRef = useRef()
+
+  useEffect(() => {
+    if(inputRef.current){
+      console.log(inputRef)
+    }
+  }, [inputRef])
 
   const [arr, setArr] = useState([
     {name: 'Big Mac', price: '10.0', type: 'burger', img: ''},
@@ -31,13 +38,16 @@ function App() {
   function CloseBot(){
     tg.close()
   }
+  function Focus(){
+    inputRef.current.focus()
+  }
 
   return (
     <div className='mainCss'>
       <div className='header'>
-        <div className='input1'>
+        <div className='input1' onClick={() => Focus()}>
           <span className='icon1'><BiSearchAlt2/></span>
-          <input type="search" value={input1} onChange={(ev) => setInput1(ev.target.value)}/>
+          <input ref={inputRef} type="search" value={input1} onChange={(ev) => setInput1(ev.target.value)}/>
         </div>
         <span className='icon1' onClick={() => setMood(!mood)}><FiShoppingCart/></span>
       </div>
