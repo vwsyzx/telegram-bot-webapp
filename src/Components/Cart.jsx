@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 
 const Cart = (props) => {
     const {basket, setBasket} = props
@@ -8,10 +9,10 @@ const Cart = (props) => {
     }
 
     return (
-        <div>
+        <div className='main'>
             {
                 basket?.map((item, index) => {
-                    return <div key={item.name}>
+                    return <div key={item.name} className="prod">
                         <h4>{item.name}</h4>
                         <span>{item.price}</span>
                         <button onClick={() => Remove(item.name)}>Remove</button>

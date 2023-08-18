@@ -26,7 +26,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='mainCss'>
       <span onClick={() => setMood(!mood)}>Cart</span>
       <>
         {!mood?<ProdList arr={arr} setBasket={setBasket}/>:mood?<Cart basket={basket} setBasket={setBasket}/>:null}

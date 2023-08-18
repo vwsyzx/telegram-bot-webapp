@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 
 const ProdList = (props) => {
 
@@ -9,13 +10,13 @@ const ProdList = (props) => {
     }
 
     return (
-        <div>
+        <div className='main'>
             {
                 arr?.map((item, index) => {
-                return <div key={item.name}>
+                return <div key={item.name} className="prod">
                     <h4>{item.name}</h4>
                     <span>{item.price}</span>
-                    <button onClick={() => Order(item)}>Order</button>
+                    <button onClick={() => Order(item)}>Add</button>
                 </div>
                 })
             }
