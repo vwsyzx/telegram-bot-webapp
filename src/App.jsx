@@ -44,6 +44,9 @@ function App() {
 
   return (
     <div className='mainCss'>
+      <div className='order'>
+        <button onClick={() => CloseBot()}>Order</button>
+      </div>
       <div className='header'>
         <div className='input1' onClick={() => Focus()}>
           <span className='icon1'><BiSearchAlt2/></span>
@@ -52,7 +55,7 @@ function App() {
         <span className='icon1' onClick={() => setMood(!mood)}><FiShoppingCart/></span>
       </div>
       {!mood?<ProdList arr={arr} setBasket={setBasket}/>:mood?<Cart basket={basket} setBasket={setBasket}/>:null}
-      <button onClick={() => CloseBot()}>Close</button>
+      
     </div>
   )
 }
