@@ -54,8 +54,8 @@ const Cart = (props) => {
                                 <span className='name_amount'>amount: <span className='amount'>{item.amount}</span></span>
                             </div>
                             <div className='tool'>
-                                <button onClick={() => Inc(item)} className="btn-prod"><FiPlus style={{fontSize: '60px'}}/></button>
-                                <button onClick={() => Dec(item)} className="btn-prod"><FiMinus style={{fontSize: '60px'}}/></button>
+                                <button onClick={() => Inc(item)} className="btn-prod"><FiPlus className='core-icon'/></button>
+                                <button onClick={() => Dec(item)} className="btn-prod"><FiMinus className='core-icon'/></button>
                             </div>
                     </div>
                 })
