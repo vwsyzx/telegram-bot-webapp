@@ -18,7 +18,10 @@ function App() {
     {name: 'Big Mac', price: '10.0', type: 'burger', img: ''},
     {name: 'Double Mac', price: '12.0', type: 'burger', img: ''},
     {name: 'Papperoni-Big', price: '16.0', type: 'pizza', img: ''},
-    {name: 'Cheezes-Big', price: '14.0', type: 'pizza', img: ''}
+    {name: 'Lavash', price: '14.0', type: 'fastfood', img: ''},
+    {name: 'Donar', price: '14.0', type: 'fastfood', img: ''},
+    {name: 'Cheezz-Cake', price: '14.0', type: 'dessert', img: ''},
+    {name: 'KFC', price: '14.0', type: 'fastfood', img: ''}
   ])
   const [basket, setBasket] = useState([])
   useEffect(() => {
