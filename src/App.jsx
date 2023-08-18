@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
 import { useState } from 'react'
 import './App.css'
+import Cart from './Components/Cart';
+import ProdList from './Components/ProdList';
 
 const tg = window.Telegram.WebApp;
 
 function App() {
+
+  const [mood, setMood] = useState(12345)
 
   const [arr, setArr] = useState([
     {name: 'Big Mac', price: '10.0', type: 'burger', img: ''},
@@ -21,24 +25,12 @@ function App() {
     tg.close()
   }
 
-  function Order(item){
-    setBasket(item)
-  }
-
   return (
     <div>
-      <span>Cart</span>
-      <div>
-      {
-        arr?.map((item, index) => {
-          return <div key={item.name}>
-            <h4>{item.name}</h4>
-            <span>{item.price}</span>
-            <button onClick={() => Order(item)}>Order</button>
-          </div>
-        })
-      }
-      </div>
+      <span onClick={() => setMood(!mood)}>Cart</span>
+      <>
+        {!mood?<ProdList arr={arr} setBasket={setBasket}/>:mood?<Cart basket={basket} setBasket={setBasket}/>:null}
+      </>
       <button onClick={() => CloseBot()}>Close</button>
     </div>
   )
