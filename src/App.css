@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h6{
   justify-content: center;
   flex-direction: row;
 
-  width: 250px;
+  width: 270px;
   height: 90%;
 
   border: 2px solid white;
@@ -56,11 +56,18 @@ h1,h2,h3,h4,h5,h6{
 .input1 input{
   background-color: transparent;
   border: 2px solid transparent;
-  outline: none;
-  color: white;
+
+  width: 80%;
+  height: 100%;
+
   font-size: 16px;
   padding: 0px;
   margin: 0px;
+  
+  outline: none;
+  color: white;
+
+  
 }
 .icon1{
   display: flex;
