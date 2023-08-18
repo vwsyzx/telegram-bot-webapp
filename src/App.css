@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -51,7 +50,7 @@ h1,h2,h3,h4,h5,h6{
   flex-direction: row;
 
   width: 250px;
-  height: 80%;
+  height: 90%;
 
   border: 2px solid white;
   border-radius: 30px;
@@ -60,7 +59,9 @@ h1,h2,h3,h4,h5,h6{
   background-color: transparent;
   border: 2px solid transparent;
   outline: none;
-  margin-left: 8px;
+  color: white;
+  font-size: 16px;
+  padding: 0px;
 }
 .icon1{
   display: flex;
