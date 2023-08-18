@@ -10,7 +10,7 @@ const Cart = (props) => {
     return (
         <div>
             {
-                basket?.map((item) => {
+                basket?.map((item, index) => {
                     return <div key={item.name}>
                         <h4>{item.name}</h4>
                         <span>{item.price}</span>
