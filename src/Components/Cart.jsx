@@ -1,21 +1,62 @@
 import React from 'react';
 import '../App.css'
+import { FiPlus, FiMinus } from 'react-icons/fi'
 
 const Cart = (props) => {
-    const {basket, setBasket} = props
+    const {basket, setBasket, arr, setArr} = props
 
-    function Remove(name){
-        setBasket(all => all.filter(elem => elem.name !== name))
+    function deleteFromBasket(id){
+        setBasket(basket.filter(elem => elem.id !== id))
+    }
+    function Order(item){
+        setBasket(basket.map(elem => {
+            if(elem.id === item.id){
+                elem === item
+            }
+            return elem
+        }))
+    }
+
+    function Inc(item){
+        setArr(arr.map(elem => {
+            if(elem.id === item.id){
+                elem.amount = elem.amount + 1
+                Order(elem)
+            }
+            return elem
+        }))
+    }
+    function Dec(item){
+        setArr(arr.map(elem => {
+            if(elem.id === item.id){
+                if(elem.amount === 1){
+                    elem.amount = 0
+                    deleteFromBasket(item.id)
+                }
+                else if(elem.amount > 1){
+                    elem.amount = elem.amount - 1
+                    Order(elem)
+                }
+            }
+            return elem
+        }))
+        
     }
 
     return (
         <div className='main'>
             {
                 basket?.map((item, index) => {
-                    return <div key={item.name} className="prod">
-                        <h4>{item.name}</h4>
-                        <span>{item.price}</span>
-                        <button onClick={() => Remove(item.name)}>Remove</button>
+                    return <div key={item.id} className="prod">
+                        <div className='content'>
+                                <h4 className='name'>{item.name}</h4>
+                                <span className='price'>${item.price}</span>
+                                <span className='name_amount'>amount: <span className='amount'>{item.amount}</span></span>
+                            </div>
+                            <div className='tool'>
+                                <button onClick={() => Inc(item)} className="btn-prod"><FiPlus style={{fontSize: '60px'}}/></button>
+                                <button onClick={() => Dec(item)} className="btn-prod"><FiMinus style={{fontSize: '60px'}}/></button>
+                            </div>
                     </div>
                 })
             }

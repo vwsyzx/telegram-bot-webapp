@@ -18,6 +18,7 @@ h1,h2,h3,h4,h5,h6{
 
   width: 100%;
   height: auto;
+  margin-bottom: 55px;
 
   border: 2px solid white;
 }
@@ -25,7 +26,7 @@ h1,h2,h3,h4,h5,h6{
 .prod{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
 
   width: 100%;
@@ -33,7 +34,56 @@ h1,h2,h3,h4,h5,h6{
 
   border: 2px solid red;
 }
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.name{
+  font-weight: 700;
+  font-size: 23px;
+  color: orangered;
+}
+.price{
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+.name_amount{
+  font-weight: 600;
+  color: white;
+}
+.amount{
+  color: orange;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+
+.tool{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
 .btn-prod{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  width: 55px;
+  height: 45px;
+  background-color: orange;
+  color: black;
+  font-weight: 700;
+}
+.btn-prod-add{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: orange;
   color: black;
   font-weight: 700;
@@ -59,9 +109,10 @@ h1,h2,h3,h4,h5,h6{
   width: 270px;
   height: 90%;
 
-  border: 2px solid white;
+  background-color: black;
   border-radius: 30px;
 }
+
 .input1 input{
   background-color: transparent;
   border: 2px solid transparent;
@@ -76,7 +127,8 @@ h1,h2,h3,h4,h5,h6{
   outline: none;
   color: white;
 }
-.icon1{
+
+.icon3{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,14 +136,49 @@ h1,h2,h3,h4,h5,h6{
   margin: 0px 6px;
 }
 
+.icon1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+  font-size: 23px;
+  margin: 0px 6px;
+
+  border-radius: 50%;
+  background-color: yellow;
+  color: black;
+}
+
+.icon2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+  font-size: 23px;
+  margin: 0px 6px;
+
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
+
 .order{
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  top: calc(100% - 45px);
-  left: calc(50% - 35px);
+  top: calc(100% - 55px);
+  left: 0px;
 
   width: 100%;
-  height: auto;
+  height: 55px;
+
+  background-color: black;
+  z-index: 99;
 }
 .order button{
   background-color: yellow;
