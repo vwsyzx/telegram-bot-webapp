@@ -5,7 +5,7 @@ const ProdList = (props) => {
     const {arr, setBasket} = props
 
     function Order(item){
-        setBasket(item)
+        setBasket(all => [...all, item])
     }
 
     return (
