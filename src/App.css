@@ -32,3 +32,39 @@ h1,h2,h3,h4,h5,h6{
 
   border: 2px solid red;
 }
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+  width: 350px;
+  height: 45px;
+
+  border: 2px solid white;
+}
+.input1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  width: 250px;
+  height: 80%;
+
+  border: 2px solid white;
+  border-radius: 30px;
+}
+.input1 input{
+  background-color: transparent;
+  border: 2px solid transparent;
+  outline: none;
+  margin-left: 8px;
+}
+.icon1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
