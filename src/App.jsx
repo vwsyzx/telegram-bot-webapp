@@ -8,7 +8,7 @@ const tg = window.Telegram.WebApp;
 
 function App() {
 
-  const [mood, setMood] = useState(12345)
+  const [mood, setMood] = useState(false)
 
   const [arr, setArr] = useState([
     {name: 'Big Mac', price: '10.0', type: 'burger', img: ''},
