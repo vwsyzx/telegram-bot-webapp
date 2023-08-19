@@ -32,7 +32,7 @@ function App() {
   }, [])
 
   function CloseBot(){
-    tg.close()
+    console.log(tg.sendData('hii'))
   }
   function Focus(){
     inputRef.current.focus()
@@ -51,7 +51,6 @@ function App() {
         <span className={mood?'icon1':"icon2"} onClick={() => {setMood(!mood)}}><FiShoppingCart/></span>
       </div>
       {!mood?<ProdList setBasket={setBasket} basket={basket} setArr={setArr} arr={arr}/>:mood?<Cart basket={basket} setBasket={setBasket} setArr={setArr} arr={arr}/>:null}
-
     </div>
   )
 }
