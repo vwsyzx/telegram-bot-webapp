@@ -35,6 +35,7 @@ function App() {
 
   function OrderFunc(basket, address){
     orderFunc({basket, address})
+    tg.close()
   }
 
   function CloseBot(){
