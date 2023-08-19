@@ -37,9 +37,8 @@ function App() {
     await orderFunc({basket, address})
   }
 
-  function CloseBot(){
-    console.log(tg.sendData('hii'))
-    console.log(tg)
+  function CloseBot(basket, address){
+    tg.sendData(JSON.stringify({basket, address}))
   }
   function Focus(){
     inputRef.current.focus()
@@ -48,7 +47,7 @@ function App() {
   return (
     <div className='mainCss'>
       <div className='order'>
-        <button onClick={async () => await OrderFunc(basket, 'street apartment home')}>Order</button>
+        <button onClick={() => CloseBot(basket, 'street apartment home')}>Order</button>
       </div>
       <div className='header'>
         <div className='input1' onClick={() => Focus()}>
