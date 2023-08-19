@@ -33,9 +33,8 @@ function App() {
     tg.ready()
   }, [])
 
-  function OrderFunc(basket, address){
-    orderFunc({basket, address})
-    tg.close()
+  async function OrderFunc(basket, address){
+    await orderFunc({basket, address})
   }
 
   function CloseBot(){
@@ -49,7 +48,7 @@ function App() {
   return (
     <div className='mainCss'>
       <div className='order'>
-        <button onClick={() => OrderFunc(basket, 'street apartment home')}>Order</button>
+        <button onClick={async () => await OrderFunc(basket, 'street apartment home')}>Order</button>
       </div>
       <div className='header'>
         <div className='input1' onClick={() => Focus()}>
