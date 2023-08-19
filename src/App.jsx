@@ -5,6 +5,7 @@ import Cart from './Components/Cart';
 import ProdList from './Components/ProdList';
 import {FiShoppingCart} from 'react-icons/fi'
 import {BiSearchAlt2} from 'react-icons/bi'
+import { cartApi } from './API/cartSlice/cartApi';
 
 
 const tg = window.Telegram.WebApp;
@@ -15,7 +16,6 @@ function App() {
   const [mood, setMood] = useState(false)
   const inputRef = useRef()
   
-
   const [arr, setArr] = useState([
     {name: 'Big Mac', price: '10.0', type: 'burger', img: '', id: 'asdkuehrjka', amount: 0},
     {name: 'Double Mac', price: '12.0', type: 'burger', img: '', id: 'iojnasjkdyer', amount: 0},
@@ -27,12 +27,19 @@ function App() {
   ])
   const [basket, setBasket] = useState([])
 
+  const [orderFunc, otherOptions1] = cartApi.useOrderMutation()
+
   useEffect(() => {
     tg.ready()
   }, [])
 
+  function OrderFunc(basket, address){
+    orderFunc({basket, address})
+  }
+
   function CloseBot(){
     console.log(tg.sendData('hii'))
+    console.log(tg)
   }
   function Focus(){
     inputRef.current.focus()
@@ -41,7 +48,7 @@ function App() {
   return (
     <div className='mainCss'>
       <div className='order'>
-        <button onClick={() => CloseBot()}>Order</button>
+        <button onClick={() => OrderFunc(basket, 'street apartment home')}>Order</button>
       </div>
       <div className='header'>
         <div className='input1' onClick={() => Focus()}>
