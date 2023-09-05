@@ -5,13 +5,11 @@ import Cart from './Components/Cart';
 import ProdList from './Components/ProdList';
 import {FiShoppingCart} from 'react-icons/fi'
 import {BiSearchAlt2} from 'react-icons/bi'
-import { cartApi } from './API/cartSlice/cartApi';
 
 
 const tg = window.Telegram.WebApp;
 
 function App() {
-
   const [input1, setInput1] = useState('')
   const [mood, setMood] = useState(false)
   const inputRef = useRef()
@@ -27,15 +25,9 @@ function App() {
   ])
   const [basket, setBasket] = useState([])
 
-  const [orderFunc, otherOptions1] = cartApi.useOrderMutation()
-
   useEffect(() => {
     tg.ready()
   }, [])
-
-  async function OrderFunc(basket, address){
-    await orderFunc({basket, address})
-  }
 
   function CloseBot(basket, address){
     tg.sendData(JSON.stringify({basket, address}))
